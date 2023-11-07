@@ -16,3 +16,5 @@ C:\Users\Constantine\Desktop\QualifyingExam\Code\QualifyingExam\QualifyingExam\o
 C:\Users\Constantine\Desktop\QualifyingExam\Code\QualifyingExam\QualifyingExam\obj\Debug\QualifyingExam.csproj.CoreCompileInputs.cache
 C:\Users\Constantine\Desktop\QualifyingExam\Code\QualifyingExam\QualifyingExam\obj\Debug\QualifyingExam.exe
 C:\Users\Constantine\Desktop\QualifyingExam\Code\QualifyingExam\QualifyingExam\obj\Debug\QualifyingExam.pdb
+C:\Users\Constantine\Desktop\QualifyingExam\Code\QualifyingExam\QualifyingExam\obj\Debug\ListOfStudents.g.cs
+C:\Users\Constantine\Desktop\QualifyingExam\Code\QualifyingExam\QualifyingExam\obj\Debug\ListOfStudents.baml

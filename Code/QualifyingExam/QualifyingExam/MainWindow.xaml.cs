@@ -16,26 +16,30 @@ using System.Windows.Shapes;
 
 namespace QualifyingExam
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        List<Student> students;
         public MainWindow()
         {
             InitializeComponent();
+            Manager.MainFrame = MainFrame;
+            Manager.MainFrame.Navigate(new ListOfStudents());
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
-
+            if (Manager.MainFrame.CanGoBack)
+            {
+                ButtonBackPage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ButtonBackPage.Visibility = Visibility.Hidden;
+            }
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void ButtonBackPage_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(new AddEdit());
-            MessageBox.Show("Добавление Студента");
+            Manager.MainFrame.GoBack();
         }
     }
 }

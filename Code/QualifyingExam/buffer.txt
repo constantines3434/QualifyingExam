@@ -1,0 +1,11 @@
+<DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100"/>
+<DataGridTemplateColumn Width="auto">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Content="Редактировать"
+                                x:Name="ButtonEdit"
+                                Click="ButtonEdit_Click"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+

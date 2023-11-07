@@ -19,25 +19,37 @@ namespace QualifyingExam
     public partial class AddEdit : Page
     {
         Student localStudent;
-        public AddEdit()
+        bool flag = false;
+
+        public AddEdit(Student student)
         {
             InitializeComponent();
-            //if (student != null)
-            //    localStudent = student;
-        }
 
+            if (student != null)
+            {
+                localStudent = student;
+                flag = true;
+            }
+            else
+            {
+                localStudent = new Student(); // Создайте новый объект, если редактируется несуществующий
+            }
+            DataContext = localStudent;
+        }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             localStudent.Surname = SurnameTextBox.Text;
             localStudent.Name = NameTextBox.Text;
             localStudent.Patronimic = PatronimicTextBox.Text;
-            localStudent.MathGrade = (int)MathGradeComboBox.SelectedItem;
-            localStudent.Informatics = (int)InformaticsGradeComboBox.SelectedItem;
-            localStudent.Physics = (int)PhysicsGradeComboBox.SelectedItem;
+            localStudent.Informatics = Convert.ToInt32((InformaticsGradeComboBox.SelectedItem as ComboBoxItem).Content);
+            localStudent.Physics = Convert.ToInt32((PhysicsGradeComboBox.SelectedItem as ComboBoxItem).Content);
 
-            if (NavigationService.CanGoBack)
+            if (!flag) // Если не редактирование, то добавляем новый объект
             {
-                NavigationService.GoBack();
+                localStudent.Id = Student.students.Count + 1;
+                Student.students.Add(localStudent);
+                MessageBox.Show("Сохранено");
+               //Manager.MainFrame.Navigate(new ListOfStudents());
             }
         }
     }
