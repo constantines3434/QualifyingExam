@@ -1,0 +1,8 @@
+1)Сертификат «Quiz Git Basic»
+2) Quiz SQL Basic
+3) «Quiz Javascript Basic»
+4) «Интерактивный тренажёр по SQL»
+5) Сертификат «Основы языка C»
+6) «C# Мини-программы»
+7) «Python Training Program»
+8) Сертификат «ИТ-Диктант»

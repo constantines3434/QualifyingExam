@@ -90,5 +90,26 @@ namespace QualifyingExam
                 DataOfStudents.ItemsSource = Student.students;
             }
         }
+
+        static double F1(double x, int n)
+        {
+            double res = 1;
+            for(int i = 0; i < n; i++)
+                res *= x;
+            return res;
+        }
+
+        static double F2(int n)
+        {
+            return (n == 0) ? 1 : (n * F2(n -1));
+        }
+
+        static double F(double x)
+        {
+            double s = 0;
+            for (int i = 0; i < 10; i++)
+                s += F1(x, i) / F2(i);
+            return s;
+        }
     }
 }
